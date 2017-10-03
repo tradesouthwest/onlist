@@ -1,0 +1,71 @@
+.onlist-page-fields label,
+.onlist-editor-fields label {
+font-weight: 700;
+}
+.onlist-editor-fields p span {
+color: #e10;
+}
+.onlist-editor-fields {
+width: 100%;
+display: inline-block;
+position: relative;
+}
+.onlist-editor-fields input {
+width: 80%
+}
+ul.onlist-list-inline {
+list-style: none;
+margin: 0;
+padding: 0;
+position: relative;
+display: inline-block;
+width: 100%;
+margin-bottom: 12px;
+}
+ul.onlist-list-inline li {
+float: left;
+margin: 5px;
+display: block;
+}
+ul.onlist-list-inline ul {
+border-left: 3px solid #d0d0d0;
+} 
+.onlist-page-fields .alignleft,
+.onlist-editor-fields .alignleft {
+max-width: 50%;
+ position: relative;
+}
+ul.onlist-list-unstyled ul li {
+margin-left: 1em;
+}
+.onlist-page-fields .alignright,
+.onlist-editor-fields .alignright {
+max-width: 50%;
+position: relative;
+display: block;
+}
+#tagsdiv-onlist-taxonomy.postbox
+{
+background: #caf4ff;
+}
+.onlist-editor-fields small#onlist_info {
+display: block;
+height: 2em;
+background: #caf4ff;
+padding: 2px 2px 0 2px;
+} 
+#new-tag-onlist-taxonomy-desc.howto {
+display: none;
+}
+#onlist-taxonomy.tagsdiv:before {
+content: "Start typing to find locations";
+position: relative;
+font-style: italic;
+color: #676767;
+ 
+}
+table.form-table label.olmin {
+display: inline-block;
+width: 210px;
+background: #b2feff;
+}

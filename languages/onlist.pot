@@ -1,0 +1,411 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: OnList\n"
+"POT-Creation-Date: 2017-10-02 21:49-0800\n"
+"PO-Revision-Date: 2017-10-02 21:49-0800\n"
+"Last-Translator: \n"
+"Language-Team: Tradesouthwest <tradesouthwest@gmail.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__;esc_html_e;"
+"esc_attr__;esc_attr_e;_n\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: onlist.php:115
+msgid "OnList Entry"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:23 admin/onlist-plugin-admin.php:24
+msgid "OnList Settings"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:50
+msgid "Name for Country Field"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:57
+msgid "Name for Address Field"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:64
+msgid "Name for City Field"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:71
+msgid "Name for State Field"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:78
+msgid "Name for ZipCode Field"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:105 admin/onlist-admin-forms.php:262
+msgid "Listings Per Page"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:112
+msgid "Excerpt Length"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:119
+msgid "Read Listing Text"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:126 admin/onlist-admin-forms.php:274
+msgid "Set Field Name"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:133 admin/onlist-admin-forms.php:268
+msgid "Default Locations"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:140 admin/onlist-admin-forms.php:271
+msgid "Show Maps on Page"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:147
+msgid "Map Width"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:154
+msgid "Map Height"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:161 admin/onlist-admin-forms.php:276
+msgid "Google Maps Key"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:177
+msgid "Before Single Content"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:184
+msgid "After Single Content"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:191
+msgid "Information"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:206
+msgid "Modify and View Listings from Here."
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:219
+msgid "OnList Information and Configuration Instructions"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:222
+msgid "This plugin last activated on: "
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:236
+msgid "Settings Saved"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:251
+msgid "Listings"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:255
+msgid "OnList Options"
+msgstr ""
+
+#: admin/onlist-plugin-admin.php:259
+msgid "Configuration"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:11
+msgid "Set a name for &#39;Country&#39; field."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:25
+msgid "Set a name for &#39;Address&#39; field."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:37
+msgid "Set a name for &#39;City&#39; field."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:49
+msgid "Set a name for &#39;State&#39; field."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:61
+msgid "Set a name for &#39;ZipCode&#39; field."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:96
+msgid "Set # of listings on page"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:111
+msgid "Set # characters in excerpt"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:128
+msgid "Check to use default USA States."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:129
+msgid ""
+"To remove these, after once installing, you\n"
+"    may delete what you do not want in the Listings Categories page. "
+"Remember, \n"
+"    you can use the Listings Categories for any genre of category you "
+"want. \n"
+"    The USA States is only a default usage of listing structure. You may add "
+"as \n"
+"    many sub-categories as you like."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:142
+msgid "Set text for listing link."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:147
+msgid ""
+"Text for link to listing. Remove any text from\n"
+"    this field and no text will show."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:158
+msgid "Set a name for &#39;Other&#39; field."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:174
+msgid "Check to Remove Maps on single pages."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:175
+msgid ""
+"By default the maps will show using the address field and zipcode field of "
+"your listings."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:186
+msgid "Set width of map on page"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:200
+msgid "Set height of map on page"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:213
+msgid "Enter your GoogleMaps API Key."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:256
+msgid "Admin form tips"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:258
+msgid "Listings Shortcodes"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:259
+msgid "Main Listing Page [onlist-listings]"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:260
+msgid "A Categories Page [onlist-categories]"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:263
+msgid "Can over-ride WP default posts per page setting."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:265
+msgid "Images For Listings"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:266
+msgid ""
+"All image placement uses the WP native Media Library. You can make galleries "
+"and there are many options that a custom media library would not provide. "
+"One nice advantage of Media Library is that you can insert an image ANYPLACE "
+"within your post/listing. Suggestion would be to put your images at the "
+"bottom of the content."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:269
+msgid ""
+"Listings Categories can be anything... food, music, plays. OnList only "
+"provides the states since most use this plugin for listing by locations."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:272
+msgid "Toggles whether or not Maps show on pages"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:277
+msgid "For an API Visit: "
+msgstr ""
+
+#: admin/onlist-admin-forms.php:278
+msgid "link opens in new window"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:280
+msgid "Before Content"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:281
+msgid ""
+"Copy or write HTML into the textarea that will either match your theme or "
+"that you want to use to\n"
+"display before the listing. Before and After Content are only effective on "
+"the Single Template (single listings)."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:284
+msgid "After Content"
+msgstr ""
+
+#: admin/onlist-admin-forms.php:285
+msgid ""
+"Both before and after textareas can be as simple as a clearfix element or "
+"you might use a section of your current theme to offset or create areas "
+"around the OnList section."
+msgstr ""
+
+#: admin/onlist-admin-forms.php:292
+msgid ""
+"For custom configuration of OnList please email \n"
+"    Larry @ "
+msgstr ""
+
+#: admin/onlist-editor-page.php:52 inc/templates/content-single.php:19
+msgid "Country "
+msgstr ""
+
+#: admin/onlist-editor-page.php:54
+msgid "Not required"
+msgstr ""
+
+#: admin/onlist-editor-page.php:59 public/onlist-public-view.php:85
+#: inc/templates/content-single.php:34
+msgid "Address "
+msgstr ""
+
+#: admin/onlist-editor-page.php:65
+msgid "City "
+msgstr ""
+
+#: admin/onlist-editor-page.php:71
+msgid "State "
+msgstr ""
+
+#: admin/onlist-editor-page.php:77
+msgid "Zip/Postal Code "
+msgstr ""
+
+#: admin/onlist-editor-page.php:83
+msgid "IMPORTANT "
+msgstr ""
+
+#: admin/onlist-editor-page.php:85
+msgid "You must add a Listing Category. ---->"
+msgstr ""
+
+#: admin/onlist-editor-page.php:90 inc/templates/content-single.php:25
+msgid "Phone "
+msgstr ""
+
+#: admin/onlist-editor-page.php:95 inc/templates/content-single.php:45
+msgid "EMail "
+msgstr ""
+
+#: admin/onlist-editor-page.php:100 inc/templates/content-single.php:50
+msgid "Website "
+msgstr ""
+
+#: admin/onlist-editor-page.php:105
+msgid "Other "
+msgstr ""
+
+#: public/onlist-public-view.php:99 inc/templates/content-single.php:57
+msgid "Listed under "
+msgstr ""
+
+#: public/onlist-public-view.php:120
+msgid "<span class=\"meta-nav\">&larr;</span> <<- "
+msgstr ""
+
+#: public/onlist-public-view.php:123
+msgid "+>> <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/onlist-plugin-post-taxo.php:6
+msgid "Listings Categories"
+msgstr ""
+
+#: inc/onlist-plugin-post-taxo.php:7
+msgid "Start typing to match a location"
+msgstr ""
+
+#: inc/Onlist_Widget.php:13
+msgid "Onlist Category Sidebar"
+msgstr ""
+
+#: inc/Onlist_Widget.php:15
+msgid "Add Widget for Onlist Plugin"
+msgstr ""
+
+#: inc/Onlist_Widget.php:53
+msgid "New title"
+msgstr ""
+
+#: inc/Onlist_Widget.php:58
+msgid "Title:"
+msgstr ""
+
+#: inc/templates/comments.php:28
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: inc/templates/comments.php:30
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: inc/templates/comments.php:37
+msgid "Send"
+msgstr ""
+
+#: inc/templates/comments.php:40
+msgid "Request Infomation"
+msgstr ""
+
+#: inc/templates/comments.php:44
+#, php-format
+msgid ""
+"You may use these\n"
+"                                 <abbr title=\"HyperText Markup Language"
+"\">HTML</abbr>\n"
+"                                 tags and attributes: %s"
+msgstr ""
+
+#: inc/templates/comments.php:52
+msgid "Respond"
+msgstr ""
+
+#: inc/templates/comments.php:54
+msgid "Comment textarea box"
+msgstr ""
+
+#: inc/templates/comments.php:60
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: inc/templates/comments.php:67
+msgid "Your email address will not be published."
+msgstr ""
+
+#: inc/templates/single-onlist_post.php:66
+msgid "Nothing found"
+msgstr ""
