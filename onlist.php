@@ -18,7 +18,6 @@ if (!defined('ONLIST_URL')) { define( 'ONLIST_URL', plugin_dir_url(__FILE__)); }
  * * * ATTENTION! * * *
  * FOR DEVELOPMENT ONLY
  * SHOULD BE DISABLED ON PRODUCTION
- * @slugs ezgmaps ezgmaps-tswplugin Ezgmaps_Tswplugin
  *----------------------------------------------------------------------------*/
 //error_reporting(E_ALL);
 //ini_set('display_errors', );
