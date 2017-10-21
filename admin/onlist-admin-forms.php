@@ -255,6 +255,9 @@ function onlist_info_1()
 <div class="wrap">
 <h2><?php esc_html_e( 'Admin form tips', 'onlist' ); ?></h2>
 <dl>
+<dt><b><?php esc_html_e( 'User Levels', 'onlist' ); ?></b></dt>
+<dd><span class="warning"><?php esc_html_e( 'Upon install of OnList, change user roles to &#39;Author&#39;!', 'onlist' ); ?></span></dd>    
+    
 <dt><b><?php esc_html_e( 'Listings Shortcodes', 'onlist' ); ?></b></dt>
 <dd><?php esc_html_e( 'Main Listing Page [onlist-listings]', 'onlist' ); ?></dd>
 <dd><?php esc_html_e( 'A Categories Page [onlist-categories]', 'onlist' ); ?></dd>
