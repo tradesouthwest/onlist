@@ -1,5 +1,5 @@
 [class^="onlist-"] {
-border-box: box-sizing;
+box-sizing: border-box;
 }
 .olclearfix:before,
 .olclearfix:after {
@@ -257,9 +257,8 @@ max-width: 100%;
 text-decoration: none;
 }
 .onlist-single a[href^="tel:"]:before {
-content: "\260e";
+content: " ";
 margin-right: 0.5em;
-color: blue;
 }
 .onlist-catlist .onlist-excerpt {
 min-height: 150px;
