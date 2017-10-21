@@ -203,7 +203,8 @@ include_once( plugin_dir_path( __FILE__ ) . 'onlist-admin-forms.php' );
 function onlist_listings_section_cb()
 {    
     print( '<h4>' );
-    esc_html_e( 'Modify and View Listings from Here.', 'onlist' );
+    esc_html_e( 'Modify Field Names from Here. 
+    Erase or leave blank to remove field.', 'onlist' );
     print( '</h4>' ); 
 }
 
