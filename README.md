@@ -21,7 +21,7 @@ Supports a Featured Image that shows in main page listings and on archive and si
 
 Please note: You must have a google Maps API Key for Maps to work. (See Q. and A. below) 
 Custom Untheme available upon request. This is the "Untheme" by Tania Rascia and is too basic for most but will provide an undiluted base to build something nice to fully customize for developers.
-Demo at https://leadspilot.com/test/business-directory/
+Demo at http://tradesouthwest.com/onlist/
 
 == Features == 
 * Most basic of settings to start a directory, with little to none configuration.
