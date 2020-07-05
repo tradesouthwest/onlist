@@ -2,10 +2,10 @@
 Contributors:  tradesouthwest
 Donate link: https://paypal.me/tradesouthwest
 Tags: directory, classifieds, listings, ecommerce, responsive, forms, metabox, real estate, business directory, listing, classified ads, catalog
-Requires at least: 3.8
-Tested up to: 4.8.2
-Requires PHP: 5.2
-Stable tag: trunk
+Requires at least: 4.1
+Tested up to: 5.2
+Requires PHP: 5.6
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Plugin URI: http://themes.tradesouthwest.com/plugins/
@@ -19,7 +19,7 @@ Supports a Featured Image that shows in main page listings and on archive and si
 
 Please note: You must have a google Maps API Key for Maps to work. (See Q. and A. below) 
 Custom Untheme available upon request. This is the "Untheme" by Tania Rascia and is too basic for most but will provide an undiluted base to build something nice to fully customize for developers.
-Demo at http://tradesouthwest.com/onlist/
+Demo at https://leadspilot.com/test/business-directory/
 
 == Features == 
 * Most basic of settings to start a directory, with little to none configuration.
@@ -78,7 +78,33 @@ Coming soon: lots of options
 n/a
 
 == Changelog ==
+1.0.6
+* removed whitespace
+* fixed zipcode element name
+* added place holder for some inputs
+* fixed PSR4 standard in comments
+* fixed widget id and title
+* reworked single and archive template
 
-Have a wonderful time!
+1.0.5
+* changed min version PHP tag
+* fixed widget callout
+* reset widget title color
 
-# onlist
+1.0.4
+* cleaned up white space
+
+1.0.3
+* repaired category errors
+* added default values to options
+* style changes to title
+
+1.0.2
+* hide posts from non-authors
+* add notes to instruction page
+
+1.0.1
+* fixed admin fields rendering
+
+1.0.0
+* initial release 
