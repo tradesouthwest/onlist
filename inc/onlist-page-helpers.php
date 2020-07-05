@@ -1,15 +1,60 @@
 <?php 
-/*
-@since ver: 1.0.0
-Author: Tradesouthwest
-Author URI: http://tradesouthwest.com
-@package onlist
-@subpackage inc/onlist-page-helpers
-*/
+/**
+ * @since ver: 1.0.6
+ * Author: Tradesouthwest
+ * Author URI: http://tradesouthwest.com
+ * @package onlist
+ * @subpackage inc/onlist-page-helpers
+ */
 // If this file is called directly, abort.
 defined( 'ABSPATH' ) or die( 'X' );
 
+/** 
+ * Custom post type onlist_post.
+ * Outputs for meta box fields
+ * @since 1.0.0
+ */
+if( !function_exists( 'onlist_get_custom_field' ) ) : 
+// Function to return a custom field value
+function onlist_get_custom_field( $value )
+{
+        $custom_field = get_post_meta( get_the_ID(), $value, true );
+        if ( $custom_field !='' ) : 
+        return sanitize_text_field( $custom_field );
+        else:
+            return '';
+            endif;
+}
+endif;
+//Remove listview from author upload page
+add_action( 'admin_head', 'onlist_remove_media_listview' );
+function onlist_remove_media_listview() {
 
+    //$pagenow holds the name of the current page being viewed
+    global $pagenow;
+    
+    if(!current_user_can('administrator') && current_user_can('edit_posts') ) {
+
+        if( 'upload.php' == $pagenow )  {
+            echo '<style type="text/css">.media-toolbar.wp-filter .view-switch {display: none;}.media-frame.mode-grid .media-toolbar {padding-top: 7px;}</style>';
+            }
+    } else { return false; } 
+} 
+// same but for edit page views
+add_action( 'admin_head', 'onlist_remove_posts_listview' );
+function onlist_remove_posts_listview() {
+
+    //$pagenow holds the name of the current page being viewed
+    global $pagenow;
+    
+    if(!current_user_can('administrator') && current_user_can('edit_posts') ) {
+
+        if( 'edit.php' == $pagenow )  {
+            echo '<style type="text/css">body.edit-php ul.subsubsub li.all a, body.edit-php ul.subsubsub li.publish a{display: none !important;}</style>';
+            }
+    } else { return false; } 
+}
+   
 /**
  * Get taxonomies terms links.
  * displays list of tags and categorized terms
@@ -48,7 +93,6 @@ function onlist_get_taxo_terms( ) {
     }
     return implode( '', $out );
 }
-
 
 //onlist-categories shortcode callback
 // https://codex.wordpress.org/Function_Reference/get_terms

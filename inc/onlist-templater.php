@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) or die( 'X' );
 /**
  * Attaches the specified template to the page identified by the specified name.
  *
@@ -17,8 +18,11 @@ function attach_single_template_to_page( $template ) {
     }
  
     // Else use custom template
-    if ( is_single() || is_tax() ) {
+    if ( is_singular() ) {
         return onlist_single_template_hierarchy( 'single-onlist_post' );
+    }
+    if ( is_tax() ) {
+        return onlist_single_template_hierarchy( 'archive-onlist_post' );
     }
 } 
 add_filter( 'template_include', 'attach_single_template_to_page' );
@@ -28,7 +32,6 @@ add_filter( 'template_include', 'attach_single_template_to_page' );
  *
  * @since 1.0
  */
- 
 function onlist_single_template_hierarchy( $template ) {
  
     // Get the template slug

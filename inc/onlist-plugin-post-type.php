@@ -1,14 +1,14 @@
 <?php 
 /** 
  * Register Custom Post Type
-$obj = get_post_type_object( 'your_post_type_name' ); 
-echo esc_html( $obj->description );
-@since ver: 1.0.0
- 
-@package onlist
-@subpackage admin/onlist-plugin-post-type
-*/
- 
+ * $obj = get_post_type_object( 'your_post_type_name' ); 
+ * echo esc_html( $obj->description );
+ * @since ver: 1.0.0
+ *
+ * @package onlist
+ * @subpackage admin/onlist-plugin-post-type
+ */
+defined( 'ABSPATH' ) or die( 'X' ); 
 // Register Custom Post Type
 register_post_type( 'onlist_post', 
     array( 
@@ -52,4 +52,3 @@ register_post_type( 'onlist_post',
        
         )
     );
-

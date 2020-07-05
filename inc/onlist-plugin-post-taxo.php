@@ -1,6 +1,6 @@
 <?php 
 // Register Custom Taxonomy
-
+defined( 'ABSPATH' ) or die( 'X' );
 //set some options for our new custom taxonomy
 $args = array(
         'label'        => __( 'Listings Categories', 'onlist' ),
@@ -23,5 +23,3 @@ $args = array(
         'show_admin_column'   => true,
         'show_ui'             => true
         );
-
-

@@ -1,27 +1,18 @@
 <?php
-/*
-Plugin Name: OnList
-Description:  Online Listing and Business Directory
-Version: 1.0.0
-Author: Tradesouthwest
-Author URI: http://tradesouthwest.com
+/**
+ * Plugin Name: OnList
+ * Description:  Online Listing and Business Directory
+ * Version: 1.0.6
+ * Author: Tradesouthwest
+ * Author URI: http://tradesouthwest.com
  * Filters and Actions hooks are loaded on this page.
-*/
+ */
 // If this file is called directly, abort.
 defined( 'ABSPATH' ) or die( 'X' );
 
-if (!defined('ONLIST_VER')) { define('ONLIST_VER', '1.0.0'); }
+if (!defined('ONLIST_VER')) { define('ONLIST_VER', '1.0.6'); }
 
 if (!defined('ONLIST_URL')) { define( 'ONLIST_URL', plugin_dir_url(__FILE__)); }
-
-/*----------------------------------------------------------------------------*
- * * * ATTENTION! * * *
- * FOR DEVELOPMENT ONLY
- * SHOULD BE DISABLED ON PRODUCTION
- *----------------------------------------------------------------------------*/
-//error_reporting(E_ALL);
-//ini_set('display_errors', );
-/*----------------------------------------------------------------------------*/
 
 /**
  * Upon plugin activation, always make sure init hook for a CPT 
@@ -103,10 +94,10 @@ function onlist_admin_style()
                       . '/css/onlist-admin.css',array(), ONLIST_VER, false );
 }
     add_action( 'admin_enqueue_scripts', 'onlist_admin_style' );
-
+    require_once 'admin/onlist-admin-forms.php'; 
     require_once 'admin/onlist-plugin-admin.php';
+  
 endif;
-	
 // Register the Metabox
 function onlist_add_custom_meta_box()
 {
@@ -119,24 +110,6 @@ function onlist_add_custom_meta_box()
                );
 }
     add_action( 'add_meta_boxes', 'onlist_add_custom_meta_box' );
-    
-/** 
- * Custom post type onlist_post.
- * Outputs for meta box fields
- * @since 1.0.0
- */
-if( !function_exists( 'onlist_get_custom_field' ) ) : 
-// Function to return a custom field value
-function onlist_get_custom_field( $value )
-{
-    global $post;
-        $custom_field = get_post_meta( $post->ID, $value, true );
-        if ( !empty( $custom_field ) )
-        return is_array( $custom_field ) ? stripslashes_deep( $custom_field ) :
-                       stripslashes( wp_kses_decode_entities( $custom_field ) );
-            return false;
-}
-endif;
 
 //output metabox to editor pages   
 function onlist_meta_box_output() 
@@ -158,8 +131,9 @@ function onlist_save_postdata($post_id)
 // check for thumbnail support 
 if ( !current_theme_supports( 'post-thumbnails' ) ) {
     add_theme_support( 'post-thumbnails' );
-    add_post_type_support( 'onlist_post', 'thumbnail' );    
-}
+    add_post_type_support( 'onlist_post', 'thumbnail' );   
+}    
+
 
 //and the rest of the files 
     include 'public/onlist-public-view.php'; 

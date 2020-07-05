@@ -1,5 +1,6 @@
 <?php 
-
+// If this file is called directly, abort.
+defined( 'ABSPATH' ) or die( 'X' );
 
 function onlist_map_meta_cap($caps, $cap, $user_id, $args)
 {
@@ -37,44 +38,70 @@ function onlist_map_meta_cap($caps, $cap, $user_id, $args)
 }
 
 /**
+ * sets only user posts as available to edit in admin
+ */
+add_action('pre_get_posts', 'onlist_filter_posts_list');
+function onlist_filter_posts_list($query)
+{
+    //$pagenow holds the name of the current page being viewed
+     global $pagenow;
+ 
+    //$current_user uses the get_currentuserinfo() method gets logged in user's data
+     global $current_user;
+     wp_get_current_user();
+
+        //any role with the edit_posts capability and on the posts list page
+     if(!current_user_can('administrator') && current_user_can('edit_posts') 
+     && ('edit.php' == $pagenow) )
+     {
+        //global $query set() method sets author as the current user's id
+        $query->set('author', $current_user->ID); 
+        $screen = get_current_screen();
+            add_filter('views_'.$screen->id, 'onlist_remove_post_counts');
+           
+        }
+}
+
+/**
  * User Manages their Media Only
  * @WP_User
  */
-function onlist_users_own_attachments( $wp_query_obj ) {
+//add_action('pre_get_posts', 'onlist_filter_query_attachments_args');
 
-    global $current_user, $pagenow;
-
-    if( !is_a( $current_user, 'WP_User->ID') )
-        return;
-
-    if( (   'edit.php' != $pagenow ) &&
-    (   'upload.php' != $pagenow ) &&
-    ( ( 'admin-ajax.php' != $pagenow ) || ( $_REQUEST['action'] != 'query-attachments' ) ) )
-    return;
-
-    if( !current_user_can('delete_pages') )
-        $wp_query_obj->set('author', $current_user->id );
-
-    return;
+function onlist_filter_query_attachments_args( $query = array() ) {
+	 $user_id = get_current_user_id();
+    if( $user_id ) {
+        $query['author'] = $user_id;
+    }
+    if( $user_id && is_admin() ) { 
+    $query['administrator'] = $user_id;
+    }
+    return $query;
+	
 }
-/**
- * sets only user posts as available to edit in admin
- */
-function onlist_posts_for_current_author($query) {
-	global $user_level;
+add_filter( 'ajax_query_attachments_args', 'onlist_filter_query_attachments_args', 10, 1 );
 
-	if($query->is_admin && $user_level > 5  ) {
-		global $user_ID;
-		$query->set('author',  $user_ID);
-		unset($user_ID);
-	}
-	unset($user_level);
 
-	return $query;
+// remove post count for other authors' posts on edit page list
+function onlist_remove_post_counts($posts_count_disp)
+{
+    //$posts_count_disp contains the 3 links, we keep 'Mine'
+    unset($posts_count_disp['all']);
+    unset($posts_count_disp['publish']);
+    
+        return $posts_count_disp;
 }
+// Create a specific hook
+add_filter( 'views_edit-post', 'onlist_remove_post_counts', 10, 1);
+add_action( 'manage_users_columns','onlist_remove_post_counts' );
 
-
-// below removed ffom admin forms featured listing
-//$options = get_option('onlistlists');
-//$select_id = $options['onlist_featured']; 
-
+//filter out wp_posts to only show author's post
+function onlist_filter_author_posts_query( $wp_query ) { 
+if ( strpos( $_SERVER[ 'REQUEST_URI' ], '/wp-admin/edit.php' ) !== false ) {
+        if ( !current_user_can( 'update_core' ) ) {
+            global $current_user;
+            $wp_query->set( 'author', $current_user->id );
+        }
+    }
+}
+add_filter('parse_query', 'onlist_filter_author_posts_query' ); 

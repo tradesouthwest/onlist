@@ -1,19 +1,19 @@
-<li><article id="post-<?php the_ID(); ?>" class="onlist-excerpt">
-        <header>
-            <h2 class="onlist-entry-title"><?php the_title(); ?></h2>
+<li class="onlist-cat-list">
+    <article id="post-<?php the_ID(); ?>" class="onlist-excerpt">
+        <header class="onlist-archive-heading">
+            <h2 class="onlist-entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( get_the_title( $post_id ) ); ?>"><?php the_title(); ?></a></h2>
         </header>
-        <figure class="onlist-featured-image">
-            <span><?php the_post_thumbnail('thumbnail'); ?></span>
-        </figure>
-        <div class="content-cats">
-        
-                <?php the_excerpt(); ?>
-                
-        </div>
-        
-        <div class="alignright">
-            <a class="readon-link" href="<?php the_permalink(); ?>">
-            <?php echo esc_html( $onlist_introline ); ?></a>
-        </div>              
-        
-    </article></li>
+        <div class="onlist-archive-inner">
+            <figure class="onlist-featured-image">
+                <span><?php echo '<a href="' . get_permalink( $post_id ) . '" 
+                    alt="' . esc_attr( get_the_title( $post_id ) ) . '">'; ?>
+                    <?php the_post_thumbnail( array(100, 100) ); ?></a></span>
+            </figure>
+            <div class="content-cats">
+            
+                    <?php the_excerpt(); ?>
+
+            </div>  
+        </div>          
+    </article>
+</li>

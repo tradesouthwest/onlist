@@ -1,3 +1,8 @@
+<?php 
+/**
+ * singular template content
+ */
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'onlist-single' ) ?>>
     <div class="entry-details">
     <div class="onlist-topdetails">
@@ -15,28 +20,34 @@
     </div>
         <div class="onlist-page-fields">
             <div class="onlist-left">
-            <?php if( $onlist_country != '' ) : ?>
-                <p><strong><?php echo esc_html_e( 'Country ', 'onlist' ); ?>
-                </strong><br><span class="onlist_country">
-                <?php echo esc_html( $onlist_country ); ?></span></p>              
-            <?php endif; ?>
-
-            <div itemscope itemtype="http://schema.org/LocalBusiness">
+            <?php if( $onlist_acountry != '' ) : ?>
+            <p><span class="onlist_country"><strong><?php 
+            echo esc_html( $onlist_acountry ); ?></strong> 
+            <?php echo esc_html( $onlist_country ); ?></span></p>
+            <?php endif; ?>            
+            <?php if( $onlist_phone != '' ) : ?>
             <p><label><?php echo esc_html__( 'Phone ', 'onlist' ); ?></label>
             <span itemprop="telephone" class="onlist_phone">
                <a href="tel:<?php echo esc_attr( $onlist_phone ); ?>" 
                   rel="nofollow" 
-            title="<?php echo esc_attr( $onlist_phone ); ?>"><?php echo esc_html( $onlist_phone ); ?>
-            </a></span></p>
-            </div>
-            
-            <?php if( $onlist_address != '' ) : ?>
-            <p><label><?php echo esc_html_e( 'Address ', 'onlist' ); ?></label><br>
-            <span class="onlist_address"><?php echo esc_html( $onlist_address ); ?></span><br>
-            <span class="onlist_city"><?php echo esc_html( $onlist_city ); ?></span>
-            <span class="onlist_state"><?php echo esc_html( $onlist_state ); ?></span><br>
-            <span class="onlist_zipcode"><?php echo esc_html( $onlist_zipcode ); ?></span></p>
-            <?php endif; ?> 
+            title="<?php echo esc_attr( $onlist_phone ); ?>"><?php echo 
+            esc_html( $onlist_phone ); ?></a></span></p>
+            <?php endif; ?>
+            <p><?php if( $onlist_aaddress != '' ) : ?>
+            <label><?php echo esc_html_e( $onlist_aaddress ); ?></label> 
+            <span class="onlist_address"><?php echo esc_html( $onlist_address ); ?></span> 
+            <?php endif; ?>
+            <?php if( $onlist_acity != '' ) : ?> 
+            <label><?php echo esc_html_e( $onlist_acity ); ?></label> 
+            <span class="onlist_city"><?php echo esc_html( $onlist_city ); ?></span> 
+            <?php endif; ?>
+            <?php if( $onlist_astate != '' ) : ?> 
+            <label><?php echo esc_html_e( $onlist_astate ); ?></label> 
+            <span class="onlist_state"><?php echo esc_html( $onlist_state ); ?></span> 
+            <?php endif; ?>
+            <?php if( $onlist_azip != '' ) : ?> 
+            <span class="onlist_zipcode"><?php echo esc_html( $onlist_zipcode ); ?></span>
+            <?php endif; ?></p>
 
             </div>
 
@@ -118,4 +129,3 @@
     </footer>
     </div>
 </article>  
-

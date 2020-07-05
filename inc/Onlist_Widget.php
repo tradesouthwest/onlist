@@ -1,13 +1,14 @@
 <?php
 /**
  * Register widget with WordPress.
+ * @since 1.0.6
  */
 class Onlist_Widget extends WP_Widget {
 
 function __construct() {
     parent::__construct(
     // Base ID of widget
-    'Onlist_Widget',
+    'onlist_widget',
 
     // Widget name will appear in UI
     __( 'Onlist Category Sidebar', 'onlist' ), // Name
@@ -33,7 +34,7 @@ function __construct() {
 			echo $args['before_title'] . $title . $args['after_title'];
 
             //do_shortcode('[onlist-categories]');
-            printf( onlist_display_category_widget() );
+            echo onlist_display_category_widget();
 	// return after widget parts
     echo $args['after_widget'];
     }
@@ -50,7 +51,7 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'New title', 'onlist' );
+$title = __( 'OnList Listings', 'onlist' );
 }
 // Widget admin form
 ?>

@@ -1,12 +1,12 @@
 <?php
 /**
  * The template for displaying Comments
- *
+ * @subpackage OnList
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-
+defined( 'ABSPATH' ) or die( 'X' ); 
 if ( post_password_required() )
     return;
         ?><ul class="commentlist" 
@@ -67,5 +67,4 @@ howdy
                                    __( 'Your email address will not be published.', 'onlist' ) . '</p>',
 
 );
-                comment_form( $comment_args ); ?>
-              
+                comment_form( $comment_args ); ?> 
