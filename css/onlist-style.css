@@ -3,6 +3,7 @@ box-sizing: border-box;
 }
 .olclearfix:before,
 .olclearfix:after {
+content: " ";
 clear: both;
 }
 .olclearfix:after {
@@ -77,7 +78,6 @@ overflow: hidden;
 }
 .onlist-page-fields .onlist-left {
 display: inline-block;
-float: left;
 width: 50%;
 box-sizing: border-box;
 padding: 5px 15px;
@@ -114,7 +114,7 @@ display: block;
 .onlist-single .onlist-topdetails {
 width: 100%;
 margin: 0 auto;
-padding: 12px 24px;
+padding: 10px;
 }
 .onlist-single .onlist-page-fields {
 border: 1px solid #e7e7e7;
@@ -123,9 +123,10 @@ margin: 0 auto;
 padding: 12px 24px;
 }
 .onlist-single .onlist-page-fields label:after {
-content: ">";
+content: "\2022";
 position: relative;
-left: 1px;
+left: 4px;
+top: 0px;
 padding-right: 5px;
 color: #555;
 }
@@ -167,16 +168,8 @@ padding: 15px;
 .entry-details .onlist-page-fields {
 max-width: 540px;
 }
-@media screen and (min-width: 769px) {
-#onlist-entry{
-padding: 30px 60px;
-}
-@media screen and (max-width: 769px) {
-.onlist-details .onlist-page-fields {
-max-width: 98.8992%;
-}
-}
 
+/*  ***************************** checkpoint */
 .onlistmaps-container { 
 background: #fff;
 display: block;
@@ -192,13 +185,29 @@ display: block;
 .onlist-entry .onlist-thumb {
 display: inline-block;
 width: 30%;
-float: left;
+
 }
 .onlist-entry-title,
 .onlist-entry .onlist-title {
-display: block;
-float: right;
-width: 70%;
+    display: block;
+    width: 90%;
+    position: relative;
+    top: 0px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 8px;
+    min-height: 3em;
+    line-height: 2;
+    background: #fff;
+    line-height: initial;
+}
+.archive .onlist-entry-title{
+margin-bottom: 0;
+height:auto;
+font-size: 2rem;
+line-height: 1.222;
+width:100%;
+
 }
 .onlist-entry .onlist-title:after {
 content: " ";
@@ -250,7 +259,7 @@ position: relative;
 .entry-excerpt {
 font-size: .938em;
 }
-onlist-featured-image img {
+.onlist-featured-image img {
 max-width: 100%;
 }
 .onlist-single a[href^="tel:"] {
@@ -259,21 +268,57 @@ text-decoration: none;
 .onlist-single a[href^="tel:"]:before {
 content: " ";
 margin-right: 0.5em;
+
 }
-.onlist-catlist .onlist-excerpt {
-min-height: 150px;
-max-height: 250px;
+ul.onlist-catlist li.onlist-cat-list{
+position:relative;
 width: 100%;
-overflow: hidden;
+margin: 1px 0;
+border-bottom: 1px solid transparent; /* testing only */
+}
+.archive ul.onlist-catlist article.onlist-excerpt {
 background: #fafafa;
+padding: 5px;
+margin: 0;
+width: 100%;
+}
+.onlist-archive-heading{
+width:100%;
+display:block;
+padding:5px;
+white-space: normal;
+word-wrap: normal;
+}
+.onlist-archive-inner{
+width: 100%;
+max-height: 9em;
+padding: 0;
+margin: 0;
+}
+.archive .onlist-featured-image{
 position: relative;
-display: block;
-padding:15px 30px;
-margin: 1px 0px;
+left: 0;
+width: 24%;
+top: -3px
 }
-.onlist-catlist .onlist-excerpt .onlist-entry-title {
+.archive .onlist-featured-image img.wp-post-image,
+.archive .onlist-featured-image img{
+margin:auto;
 }
-.onlist-catlist .onlist-excerpt .onlist-featured-image {
+.archive .onlist-featured-image:after{
+content:"";
+clear:none;
+}
+.archive .content-cats{
+width: 77%;
+position: relative;
+margin-left: 21%;
+top: -8em;
+} 
+.onlist-readon {
+position: relative;
+float: right;
+right: 6%;
 }
 ul.onlist_catlist {
 list-style: inherit;
@@ -293,7 +338,7 @@ list-style: none;
 position: relative;
 margin: 0 auto;
 padding: 0;
-width: 90%;
+width: 98.8992%;
 }
 ul.onlist-catlist li a {
 text-decoration: none;
@@ -340,4 +385,32 @@ margin-left: 1em;
 ul.onlist-list-unstyled li ul.has-children {
 margin: 3px 0 0 0;
 } 
-/* Have A Wonderful Time */
+.widget_onlist_widget .widget-title{
+    color: inherit;
+}
+@media screen and (min-width: 769px) {
+    #onlist-entry{
+        padding: 30px 60px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .onlist-details .onlist-page-fields {
+        max-width: 98.8992%;
+    }
+}
+@media screen and (max-width: 900px){
+
+.archive .content-cats{
+width: 75%;
+margin-left: 22%;
+} 
+} 
+@media screen and (max-width: 640px){
+    .onlist-archive-inner {
+        max-height:12em;
+    }
+    .archive .content-cats{
+        width: 70%;
+        margin-left: 28%;
+    } 
+} 

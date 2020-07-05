@@ -1,43 +1,49 @@
 <?php 
-// get the value of the setting
-// @uses $options = get_option('onlistadmin');
-// field content cb
+/** get the value of the setting
+ * @uses $options = get_option('onlist_{option-name}');
+ */
+defined( 'ABSPATH' ) or die( 'X' );
 
 //name for 'Other' field
 function onlist_acountry_field()
 {
 $options = get_option('onlistlists'); 
+$onlist_acountry = $options['onlist_acountry']; 
+if( $onlist_acountry == '' ) { $onlist_acountry = __( 'Country', 'onlist' ); } 
 ?>
-    <label class="olmin"><?php esc_html_e( 'Set a name for &#39;Country&#39; field.',
-                             'onlist' ); ?></label>
+    <label class="olmin"><?php esc_html_e( 'Set a name for &#39;Country&#39; field.', 'onlist' ); ?></label>
     <input type="text" name="onlistlists[onlist_acountry]" 
-           value="<?php echo esc_attr( $options['onlist_acountry'] ); ?>" 
+           value="<?php echo esc_attr( $onlist_acountry ); ?>" 
            size="35"/>
     <?php
 }
+
 //name for 'Address' field
 function onlist_aaddress_field()
 {
 $options = get_option('onlistlists');
-/*$onlist_aaddress = $options['onlist_aaddress'];
-if ( $onlist_aaddress == '' ) $onlist_aaddress = 'Address'; */ 
+$onlist_aaddress = $options['onlist_aaddress'];
+if ( $onlist_aaddress == '' ) $onlist_aaddress = __( 'Address', 'onlist' );  
 ?>
     <label class="olmin"><?php esc_html_e( 'Set a name for &#39;Address&#39; field.',
                              'onlist' ); ?></label>   
     <input type="text" name="onlistlists[onlist_aaddress]" 
-           value="<?php echo esc_attr( $options['onlist_aaddress'] ); ?>" 
-           size="35"/>
+           value="<?php echo esc_attr( $onlist_aaddress ); ?>" 
+           size="35" placeholder="<?php esc_attr_e( 
+           'Best to reserve for location', 'onlist' ); ?>" />
     <?php
 }
 //name for 'City' field
 function onlist_acity_field() 
 {
 $options = get_option('onlistlists');
+$onlist_acity = $options['onlist_acity'];
+if ( $onlist_acity == '' ) $onlist_acity = __( 'City', 'onlist' );  
 ?>
     <label class="olmin"><?php esc_html_e( 'Set a name for &#39;City&#39; field.',
                              'onlist' ); ?></label>
     <input type="text" name="onlistlists[onlist_acity]" 
-           value="<?php echo esc_attr( $options['onlist_acity'] ); ?>" 
+           value="<?php echo esc_attr( $onlist_acity ); ?>" 
            size="35"/>
     <?php
 }
@@ -45,49 +51,32 @@ $options = get_option('onlistlists');
 function onlist_astate_field()
 {
 $options = get_option('onlistlists');
+$onlist_astate = $options['onlist_astate'];
+if ( $onlist_astate == '' ) $onlist_astate = __( 'State', 'onlist' );  
 ?>
     <label class="olmin"><?php esc_html_e( 'Set a name for &#39;State&#39; field.',
                              'onlist' ); ?></label>
     <input type="text" name="onlistlists[onlist_astate]" 
-           value="<?php echo esc_attr( $options['onlist_astate'] ); ?>" 
+           value="<?php echo esc_attr( $onlist_astate ); ?>" 
            size="35"/>
     <?php
 }
-//name for 'Zip' field
+//name label and placeholder for 'Zip' field
 function onlist_azip_field()
 {
 $options = get_option('onlistlists');
+$onlist_azip = $options['onlist_azip'];
+if ( $onlist_azip == '' ) $onlist_azip = __( 'Zip', 'onlist' );  
 ?>
     <label class="olmin"><?php esc_html_e( 'Set a name for &#39;ZipCode&#39; field.',
                              'onlist' ); ?></label>
     <input type="text" name="onlistlists[onlist_azip]" 
-           value="<?php echo esc_attr( $options['onlist_azip'] ); ?>" 
-           size="35"/>
+           value="<?php echo esc_attr( $onlist_azip ); ?>" 
+           size="35" placeholder="<?php esc_attr_e( 
+           'Best to reserve for location', 'onlist' ); ?>" />
     <?php
 }
-//outputs select element of listings
-/* 
-function onlist_featured_listing( $select_id, $post_type='onlist_post', $selected = 0) 
-{
-        
-        $post_type_object = get_post_type_object($post_type);
-        $label = $post_type_object->label;
-        $posts = get_posts(array(
-            'post_type'=> $post_type, 
-            'post_status'=> 'publish', 
-            'suppress_filters' => false, 
-            'posts_per_page'=>-1));
-
-        echo '<select name="onlistlists[\'onlist_featured\']" 
-                        id="onlistlists[\'onlist_featured\']">';
-        echo '<option value = "" >' . $label . '</option>';
-        foreach ($posts as $post) {
-            echo '<option value="'. $post->ID . '" >'. $post->post_title . '</option>';
-        }
-        echo '</select>'; 
-
-}
-*/
+ 
 //output the number of posts field
 function onlist_admin_perpg()
 {
@@ -138,11 +127,14 @@ $options = get_option('onlistadmin');
 //read more link text
 function onlist_admin_introline() {
 $options = get_option('onlistadmin');
+if( $options['onlist_introline'] != '' ) { 
+$options_introline =  $options['onlist_introline']; } else { 
+$options_introline = "&gt;"; } 
 ?>
     <label class="olmin"><?php esc_html_e( 'Set text for listing link.', 
     'onlist' ); ?></label> 
     <input name="onlistadmin[onlist_introline]" type="text" 
-    value="<?php echo esc_attr( $options['onlist_introline'] ); ?>" 
+    value="<?php echo esc_attr( $options_introline ); ?>" 
     id="onlistCountry" /> <br>
     <small><?php esc_html_e( 'Text for link to listing. Remove any text from
     this field and no text will show.', 'onlist' ); ?></small>
@@ -173,7 +165,7 @@ $options = get_option('onlistadmin');
     echo 'checked="checked"'; ?> /> 	
     <?php esc_html_e( 'Check to Remove Maps on single pages.', 'onlist' ); ?></p>
     <small><?php esc_html_e( 'By default the maps will show using the address field and zipcode field of your listings.', 
-     'onlist' ); ?></small> <?php //echo $options['onlist_showmap']; ?>
+     'onlist' ); ?></small> 
 <?php  
 } 
 
@@ -228,9 +220,7 @@ $options = get_option('onlistinfo');
 <div class="field">
             <label for="onlist_before_content"></label>
             
-            <textarea name="onlistinfo[onlist_before_content]" 
-            id="onlist_beforeContent" cols="35" rows="5">
-            <?php echo esc_textarea( $options['onlist_before_content'] ); ?></textarea>
+<textarea name="onlistinfo[onlist_before_content]" id="onlist_beforeContent" cols="35" rows="5"><?php echo esc_textarea( $options['onlist_before_content'] ); ?></textarea>
         </div>
 <?php 
 }
@@ -240,9 +230,7 @@ $options = get_option('onlistinfo'); ?>
 <div class="field">
             <label for="onlist_after_content"></label>
             
-            <textarea name="onlistinfo[onlist_after_content]" 
-            id="onlist_afterContent" cols="35" rows="5">
-            <?php echo esc_textarea( $options[ 'onlist_after_content' ] );?></textarea>
+<textarea name="onlistinfo[onlist_after_content]" id="onlist_afterContent" cols="35" rows="5"><?php echo esc_textarea( $options[ 'onlist_after_content' ] );?></textarea>
         </div>
 <?php 
 }
@@ -256,8 +244,8 @@ function onlist_info_1()
 <h2><?php esc_html_e( 'Admin form tips', 'onlist' ); ?></h2>
 <dl>
 <dt><b><?php esc_html_e( 'User Levels', 'onlist' ); ?></b></dt>
-<dd><span class="warning"><?php esc_html_e( 'Upon install of OnList, change user roles to &#39;Author&#39;!', 'onlist' ); ?></span></dd>    
-    
+<dd><span class="warning"><?php esc_html_e( 'Upon install of OnList, change user roles to &#39;Author&#39;!', 'onlist' ); ?></span></dd>
+
 <dt><b><?php esc_html_e( 'Listings Shortcodes', 'onlist' ); ?></b></dt>
 <dd><?php esc_html_e( 'Main Listing Page [onlist-listings]', 'onlist' ); ?></dd>
 <dd><?php esc_html_e( 'A Categories Page [onlist-categories]', 'onlist' ); ?></dd>
@@ -304,5 +292,4 @@ function onlist_filter_checkbox($input)
     $vals = array( "yes", "no", true, false, 1, 0 );
         if( in_array($input, $vals ) ) 
             return $val;
-}
-
+} 

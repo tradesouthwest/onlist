@@ -1,11 +1,11 @@
 <?php
-/*
-@since ver: 1.0.0
-Author: Tradesouthwest
-Author URI: http://tradesouthwest.com
-@package onlist
-@subpackage admin/onlist-plugin-admin
-*/
+/**
+ * @since ver: 1.0.6
+ * Author: Tradesouthwest
+ * Author URI: http://tradesouthwest.com
+ * @package onlist
+ * @subpackage admin/onlist-plugin-admin
+ */
 // If this file is called directly, abort.
 defined( 'ABSPATH' ) or die( 'X' ); 
 
@@ -197,7 +197,7 @@ function onlist_register_admin_options()
 }
 
 //callbacks for all form parts
-include_once( plugin_dir_path( __FILE__ ) . 'onlist-admin-forms.php' );   
+//include_once( plugin_dir_path( __FILE__ ) . 'onlist-admin-forms.php' );   
 
 // section content cb
 function onlist_listings_section_cb()
@@ -294,5 +294,4 @@ function onlist_check_locations_term()
 
     wp_set_object_terms( $object_id, $terms, $taxonomy, $append );  
     } 
-}
-
+} 
