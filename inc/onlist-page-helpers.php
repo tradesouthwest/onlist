@@ -152,7 +152,7 @@ function onlist_show_children_cats($class) {
 function onlist_custom_excerpt() 
 { 
     $options = get_option('onlistadmin');
-    $length  = $options['onlist_excerpt'];
+    $length  = ( $options['onlist_excerpt'] !='') ? $options['onlist_excerpt'] : '55';
 
     $excerpt = get_the_excerpt();
         return substr( $excerpt, 0, $length ) . '&hellip;'; 
