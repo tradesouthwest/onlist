@@ -1,4 +1,4 @@
-# onlist
+# Onlist
 Fast and easy setup to get online listing site or directory started. WP Plugin
 === OnList ===
 Contributors:  tradesouthwest
