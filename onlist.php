@@ -141,6 +141,7 @@ if ( !current_theme_supports( 'post-thumbnails' ) ) {
     //include templater    
     include 'inc/onlist-templater.php';
     include 'inc/onlist-page-helpers.php';
+    include 'inc/Onlist_Widget.php';
     
     //register shortcodes
 function onlist_register_shortcodes() {
@@ -148,6 +149,4 @@ function onlist_register_shortcodes() {
     add_shortcode( 'onlist-categories', 'onlist_display_category_widget' );
 }
     add_action( 'init', 'onlist_register_shortcodes' );
-
-    include 'inc/Onlist_Widget.php';
 ?>
